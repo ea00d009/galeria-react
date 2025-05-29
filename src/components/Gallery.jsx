@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Product from './Product';
+import './Gallery.css';
 const productos = [
   {
     "_id": "1",
@@ -145,14 +146,14 @@ const Gallery = () => {
   }, []);
 
   if (loading) {
-    return <h1>Cargando productos...</h1>;
+    return <h1 className="gallery-loading">Cargando productos...</h1>;
   }
 
   if (error) {
     return (
-      <div>
-        <h2>Usando datos locales (la API no está disponible)</h2>
-        <div style={{ display: 'flex', flexWrap: 'wrap', width: '100%' }}>
+      <div className="gallery-container">
+        <h2 className="gallery-error-message">Usando datos locales (la API no está disponible)</h2>
+        <div className="gallery-container">
           {listaProductos.map((producto, index) => (
             <Product key={producto._id || index} product={producto} />
           ))}
@@ -162,7 +163,7 @@ const Gallery = () => {
   }
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', width: '100%' }}>
+    <div className="gallery-container">
       {listaProductos.map((producto, index) => (
         <Product key={producto._id || index} product={producto} />
       ))}

@@ -5,7 +5,17 @@ import Gallery from './components/Gallery';
 function App() {
   return (
     <div>
-      <h1 style={{ textAlign: 'center' }}>Galería de Productos</h1>
+      <h1 style={{ 
+        textAlign: 'center', 
+        color: 'white', 
+        fontSize: '2.5rem',
+        marginBottom: '2rem',
+        textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+        fontWeight: 'bold',
+        padding: '1rem 0'
+      }}>
+        ✨ Galería de Productos ✨
+      </h1>
       <Gallery />
     </div>
   );
